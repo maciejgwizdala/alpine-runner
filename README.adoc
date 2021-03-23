@@ -1,0 +1,23 @@
+= alpine-runner
+GitHub runner running on Alpine Edge
+
+== Local development
+* Build docker image: `docker build -t alpine-runner .`
+* Set environment variables in `.env` file:
+** RUNNER_SCOPE:      [Req] repo (owner/repo) or org (organization)
+** RUNNER_PAT:        [Req] A PAT token with at least admin scope
+** RUNNER_NAME:       [Opt] Name for the runner
+** RUNNER_LABELS:     [Opt] Comma delimited list of initial labels for the runner
+** GITHUB_API_URL:    [Opt] Defaults to https://api.github.com. Use https://YOURGHESHOSTNAME/api/v3 for GHES
+** GITHUB_SERVER_URL: [Opt] Detaults to https://github.com
+* Run image with `docker run -ti --rm --env-file .env alpine-runner`
+
+== Installed tools
+* https://github.com/Azure/azure-cli[azure-cli]
+* https://github.com/helm/helm[helm]
+* https://github.com/genuinetools/img[img]
+* https://github.com/kubernetes/kubernetes[kubectl]
+* https://github.com/mono/mono[mono]
+* https://www.python.org/[python3]
+* https://github.com/hashicorp/terraform[terraform]
+* https://github.com/gruntwork-io/terragrunt[terragrunt]
